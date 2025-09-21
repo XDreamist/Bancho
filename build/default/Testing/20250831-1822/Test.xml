@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-g++"
+	BuildStamp="20250831-1822-Experimental"
+	Name="tsushima"
+	Generator="ctest-3.22.1"
+	CompilerName="/usr/bin/g++"
+	CompilerVersion="11.4.0"
+	OSName="Linux"
+	Hostname="tsushima"
+	OSRelease="6.8.0-78-generic"
+	OSVersion="#78~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Aug 13 14:32:06 UTC 2"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="42"
+	ProcessorCacheSize="3072"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="2"
+	TotalVirtualMemory="4025"
+	TotalPhysicalMemory="3793"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="799.401"
+	>
+	<Testing>
+		<StartDateTime>Aug 31 23:52 IST</StartDateTime>
+		<StartTestTime>1756664569</StartTestTime>
+		<TestList/>
+		<EndDateTime>Aug 31 23:52 IST</EndDateTime>
+		<EndTestTime>1756664569</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
