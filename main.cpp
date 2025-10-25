@@ -2,72 +2,15 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
-#include <cstring>
 #include <thread>
 
 #include "network/BanchoServer.h"
-
-#include <SFML/Graphics.hpp>
 
 void startServer();
 void handleClient(int client_sock_fd, int volunteer_id);
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Bancho");
-
-    // Load sprite texture
-    sf::Texture texture;
-    if (!texture.loadFromFile("Ludo-Idle.png")) {
-        return -1;
-    }
-
-    sf::Sprite sprite(texture);
-    sprite.setPosition(208, 108);
-
-    sf::Vector2f charSize;
-    charSize.x = 0.2;
-    charSize.y = 0.2;
-    sprite.setScale(charSize);
-
-    // Frame size (calculated from sheet)
-    const int frameWidth = 256;
-    const int frameHeight = 320;
-    const int columns = 4;
-    const int rows = 2;
-
-    // Start at first frame
-    int frameX = 0;
-    int frameY = 0;
-    sprite.setTextureRect(sf::IntRect(frameX * frameWidth, frameY * frameHeight, frameWidth, frameHeight));
-
-    sf::Clock clock;
-
-    while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        float time = clock.getElapsedTime().asSeconds();
-
-        // Animate every 0.15s
-        if (time > 0.15f) {
-            frameX++;
-            if (frameX >= columns) {
-                frameX = 0;
-                frameY = (frameY + 1) % rows; // switch row
-            }
-            sprite.setTextureRect(sf::IntRect(frameX * frameWidth, frameY * frameHeight, frameWidth, frameHeight));
-            clock.restart();
-        }
-
-        window.clear(sf::Color::Black);
-        window.draw(sprite);
-        window.display();
-    }
-
-    return 0;
+    startServer();
 }
 
 void startServer() {
